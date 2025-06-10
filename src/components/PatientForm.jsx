@@ -21,11 +21,12 @@ export default function PatientForm({ onAdd }) {
   return (
     <form onSubmit={handleSubmit} className="form-card animate-fade-in">
       <input name="name" placeholder="Name" value={formData.name} onChange={handleChange} required />
-      <input name="dob" type="date" value={formData.dob} onChange={handleChange} required />
+      <input name="dob" placeholder="D.O.B" type="date" value={formData.dob} onChange={handleChange} required />
       <select name="gender" value={formData.gender} onChange={handleChange} required>
         <option value="">Gender</option>
         <option value="male">Male</option>
         <option value="female">Female</option>
+        <option value="others">Others</option>
       </select>
       <input name="contact" placeholder="Contact" value={formData.contact} onChange={handleChange} required />
       <button type="submit">Add Patient</button>
