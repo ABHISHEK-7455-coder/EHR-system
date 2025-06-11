@@ -1,40 +1,63 @@
-body {
+body, html {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
+  height: 100%;
+  width: 100%;
   background: #f0f2f5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+}
+
+#root {
+  height: 100%;
 }
 
 .app-container {
-  width: 100%;
-  max-width: 800px;
-  margin: auto;
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  animation: fadeIn 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .navbar {
-  display: flex;
-  justify-content: space-around;
-  background-color: #1972b1bd;
+  background-color: #0077cc;
   color: white;
-  padding: 1rem;
-  text-align: center;
+  padding: 1rem 2rem;
 }
 
 .logo {
   margin: 0;
 }
 
-.content {
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: white;
+  padding: 10px;
+}
+
+.header-nav {
+  padding-top: 20px;
+
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: #0077cc;
+  padding: 20px;
+}
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+}
+
+.main-content {
+  flex: 1;
   padding: 2rem;
+  overflow-y: auto;
 }
 
 .form-card, .details-card {
@@ -43,6 +66,7 @@ body {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   margin-bottom: 2rem;
+  max-width: 400px;
 }
 
 input, select, button {
@@ -54,12 +78,24 @@ input, select, button {
   transition: all 0.3s ease;
 }
 
-input, select {
+input {
+  width: 96%;
+}
+
+select {
   width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
 }
 
 button {
-  background-color: #1972b1bd;
+  background-color: #0077cc;
   color: white;
   cursor: pointer;
   border: none;
@@ -68,6 +104,13 @@ button {
 
 button:hover {
   background-color: #005fa3;
+}
+
+.info-btn {
+  height: fit-content;
+  align-self: flex-start;
+  margin-left: 2rem;
+  margin-top: 1rem;
 }
 
 .patient-list {
@@ -80,7 +123,7 @@ button:hover {
   justify-content: space-between;
   align-items: center;
   background: #e6f2ff;
-  border: 1px solid #1972b1bd;
+  border: 1px solid #0077cc;
   border-radius: 6px;
   padding: 0.5rem;
   margin: 0.5rem 0;
@@ -106,5 +149,87 @@ button:hover {
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.5s ease-in-out;
+  animation: fadeIn 0.5s ease-in-out;
+}
+.clinical-notes-box {
+  background-color: #f9f9ff;
+  border-left: 5px solid #4a90e2;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.clinical-notes-box h4 {
+  margin: 0 0 0.5rem;
+  color: #4a4a4a;
+  font-size: 1.1rem;
+}
+
+.clinical-notes-content {
+  white-space: pre-wrap;
+  color: #333;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.5;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="file"],
+textarea {
+  width: 95.5%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+  outline: none;
+}
+
+button {
+  background-color: #4a90e2;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #357ABD;
+}
+
+.form-group {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: #fafafa;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+
+.form-group legend {
+  padding: 0 10px;
+  font-weight: bold;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
