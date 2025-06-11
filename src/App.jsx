@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Dashboard from './pages/Dashboard';
 import PatientDetails from './pages/PatientDetails';
 import NavBar from './components/NavBar';
-import Header from './assets/Header';
+import Header from './Header';
 
 export default function App() {
   const [patients, setPatients] = useState([]);
