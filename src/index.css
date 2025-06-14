@@ -4,7 +4,8 @@ body, html {
   padding: 0;
   height: 100%;
   width: 100%;
-  background: #f0f2f5;
+  /* background: #f0f2f5; */
+  background: linear-gradient(135deg, #2ca3fa, #5ba2f4 );
 }
 
 #root {
@@ -15,6 +16,7 @@ body, html {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background-color: linear-gradient(135deg, #2ca3fa, #5ba2f4 );
 }
 
 .navbar {
@@ -30,8 +32,8 @@ body, html {
 .header-container {
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: linear-gradient(135deg, #2ca3fa, #5ba2f4 );
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   background: white;
   padding: 10px;
 }
